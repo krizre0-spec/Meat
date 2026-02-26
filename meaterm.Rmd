@@ -1,0 +1,19 @@
+---
+title: "Meat"
+author: "Liz Kriz"
+date: "2026-02-26"
+output: 
+  ioslides_presentation:
+    incremental: true
+    transition: faster
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## testing 
++ 1 
++ 2 
+
+## test2 
