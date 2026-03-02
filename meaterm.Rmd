@@ -144,10 +144,10 @@ In this presentation we will examine meat consumption and production patterns un
 
 **Haiti, Yemen**, and **Afghanistan** are three of the seven countries of greatest concern for hunger risk according to *Action Against Hunger*. These countries will serve as our `famine high-risk` group. 
 
-```{r, fig.width=5, fig.height=3}
+```{r, fig.width=5, fig.height=3, warning=FALSE}
 ggplot(nmgdp,
        aes(x=year, y=gdp_per_capita, color=entity))+geom_point()+
-  labs(title="gdp per capita for countries over the years") 
+  labs(title="gdp per capita for countries over the years", y='GDP per Capita', x='Year') + labs(color = "Countries")
 ```
 This group will contrast the `carnivore` group, which is made up of the **United States, Argentina**, and **Australia** - some of the biggest meat-consuming countries in the world (per capita).
 
@@ -157,7 +157,8 @@ Lots of Beef and Poultry!
 
 ```{r}
 ggplot(nmpc, aes(x = entity, y = kg_y_pc,fill=meat_type)) +
-    geom_col(position = "dodge")+labs(title='meat consumed per capita')
+    geom_col(position = "dodge")+labs(title='Meat Consumed per Capita',
+x='Countries', y='Kg per Year per Capita') + labs(fill = "Meat Type")
 ```
 
 
@@ -185,7 +186,7 @@ ggplot(meat_percap,
   geom_point()+
   labs(title='Beef Consumption',
        x='Year', y='Beef (kg/year/per capita)')+
-  scale_y_continuous(labels = scales::label_comma())
+  scale_y_continuous(labels = scales::label_comma())+ labs(color = "Countries")
 ```
 
 ## Which is what we are already seeing! 
@@ -197,7 +198,7 @@ ggplot(meat_percap,
            color=entity))+
   geom_point()+
   labs(title='Poultry Consumption', x='Year', y='Poultry(kg/year/per capita)')+
-  scale_y_continuous(labels = scales::label_comma()) 
+  scale_y_continuous(labels = scales::label_comma())+ labs(color = "Countries")
 
 ```
 
@@ -209,7 +210,7 @@ ggplot(production,
            y=tons, color=meat_type))+
   geom_point()+
   labs(title='Global Poultry + Beef Production', x='Year', y='Beef + Poultry(tonnes)')+
-  scale_y_continuous(labels = scales::label_comma())
+  scale_y_continuous(labels = scales::label_comma())+ labs(color = "Meat Type")
 ```
 
 ## Is it really doable?
@@ -227,7 +228,8 @@ ggplot(production,
 ```{r}
 ggplot(food_waste_sum,
        aes(x=entity, y=waste, fill=entity))+geom_col()+
-  labs(title='Kilograms of Food Waste in 2022', x='Countries', y='Waste')
+  labs(title='Kilograms of Food Waste in 2022', x='Countries', y='Waste')+ 
+  labs(fill = "Countries")
 
 ```
 
